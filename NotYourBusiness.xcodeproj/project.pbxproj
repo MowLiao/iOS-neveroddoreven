@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		137740D72052E9C20072A3E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137740D62052E9C20072A3E7 /* AppDelegate.swift */; };
-		137740D92052E9C20072A3E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137740D82052E9C20072A3E7 /* ViewController.swift */; };
-		137740DC2052E9C20072A3E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137740DA2052E9C20072A3E7 /* Main.storyboard */; };
+		137740D92052E9C20072A3E7 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137740D82052E9C20072A3E7 /* MapController.swift */; };
+		137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137740DA2052E9C20072A3E7 /* MapScreen.storyboard */; };
 		137740DE2052E9C20072A3E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 137740DD2052E9C20072A3E7 /* Assets.xcassets */; };
 		137740E12052E9C20072A3E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */; };
 		137740EC2052E9C20072A3E7 /* NotYourBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137740EB2052E9C20072A3E7 /* NotYourBusinessTests.swift */; };
@@ -55,8 +55,8 @@
 /* Begin PBXFileReference section */
 		137740D32052E9C10072A3E7 /* NotYourBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotYourBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		137740D62052E9C20072A3E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		137740D82052E9C20072A3E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		137740DB2052E9C20072A3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		137740D82052E9C20072A3E7 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		137740DB2052E9C20072A3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapScreen.storyboard; sourceTree = "<group>"; };
 		137740DD2052E9C20072A3E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		137740E02052E9C20072A3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		137740E22052E9C20072A3E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,12 +154,11 @@
 		137740D52052E9C10072A3E7 /* NotYourBusiness */ = {
 			isa = PBXGroup;
 			children = (
-				137740D62052E9C20072A3E7 /* AppDelegate.swift */,
-				137740D82052E9C20072A3E7 /* ViewController.swift */,
+				13C34BBB2088CBE600107D4B /* View */,
+				13C34BBA2088CBE000107D4B /* Controller */,
+				13C34BB92088CBD300107D4B /* Model */,
 				1377410A2052F0910072A3E7 /* GoogleMaps.bundle */,
-				137740DA2052E9C20072A3E7 /* Main.storyboard */,
 				137740DD2052E9C20072A3E7 /* Assets.xcassets */,
-				137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */,
 				137741042052F0080072A3E7 /* GoogleMapsBase.framework */,
 				137741062052F05D0072A3E7 /* GoogleMaps.framework */,
 				137741072052F05D0072A3E7 /* GoogleMapsCore.framework */,
@@ -206,6 +205,31 @@
 				1377410D2052F1170072A3E7 /* Accelerate.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13C34BB92088CBD300107D4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				137740D62052E9C20072A3E7 /* AppDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		13C34BBA2088CBE000107D4B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				137740D82052E9C20072A3E7 /* MapController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		13C34BBB2088CBE600107D4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */,
+				137740DA2052E9C20072A3E7 /* MapScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +341,7 @@
 			files = (
 				137740E12052E9C20072A3E7 /* LaunchScreen.storyboard in Resources */,
 				137740DE2052E9C20072A3E7 /* Assets.xcassets in Resources */,
-				137740DC2052E9C20072A3E7 /* Main.storyboard in Resources */,
+				137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */,
 				1377410B2052F0910072A3E7 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				137740D92052E9C20072A3E7 /* ViewController.swift in Sources */,
+				137740D92052E9C20072A3E7 /* MapController.swift in Sources */,
 				137740D72052E9C20072A3E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,12 +404,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		137740DA2052E9C20072A3E7 /* Main.storyboard */ = {
+		137740DA2052E9C20072A3E7 /* MapScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				137740DB2052E9C20072A3E7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MapScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */ = {
@@ -599,6 +623,7 @@
 				137740FD2052E9C20072A3E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		137740FE2052E9C20072A3E7 /* Build configuration list for PBXNativeTarget "NotYourBusinessTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +632,7 @@
 				137741002052E9C20072A3E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		137741012052E9C20072A3E7 /* Build configuration list for PBXNativeTarget "NotYourBusinessUITests" */ = {
 			isa = XCConfigurationList;
@@ -615,6 +641,7 @@
 				137741032052E9C20072A3E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

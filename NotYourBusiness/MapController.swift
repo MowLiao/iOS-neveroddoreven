@@ -11,6 +11,7 @@ import GoogleMaps
 
 
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+    
     @IBOutlet var mapView: GMSMapView!
     
     var locationManager = CLLocationManager()
@@ -21,7 +22,11 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     override func loadView() {
         //let camera = GMSCameraPosition.camera(withLatitude: 53.805114, longitude: -1.555301, zoom: 18.7)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        
+        //Set this to false to disable gestures
         mapView.settings.setAllGesturesEnabled(true)
+        
+        mapView.settings.myLocationButton = true
         
         view = mapView
         print("loadView")
@@ -46,7 +51,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         
         camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:18.7)
         mapView.animate(to: camera)
-//        print(isMarkerWithinScreen(marker: location!))
+        print(isMarkerWithinScreen(marker: location!))
         
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
@@ -55,9 +60,13 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     // WIP
     func isMarkerWithinScreen(marker: CLLocation) -> Bool {
-        let region = self.mapView.projection.point(for: marker.coordinate)
+        print(marker.coordinate)
+        print(mapView.projection.visibleRegion())
+        let coord = marker.coordinate
+        let isVisible = mapView.projection.contains(coord)
+//        let region = self.mapView.projection.point(for: marker.coordinate)
 //        let bounds = GMSCoordinateBounds(region: region)
-        print(region)
+        print(isVisible)
         return true
     }
     
