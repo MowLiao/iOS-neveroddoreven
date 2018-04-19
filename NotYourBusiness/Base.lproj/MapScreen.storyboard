@@ -24,7 +24,7 @@
                         <accessibility key="accessibilityConfiguration" identifier="mapView"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8bC-Xf-vdC" id="HMM-nL-hu1"/>
+                        <outlet property="mapView" destination="8bC-Xf-vdC" id="27h-qo-Cjv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
