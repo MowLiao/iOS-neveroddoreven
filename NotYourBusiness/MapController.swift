@@ -38,6 +38,9 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
+        //Set style of map
+        setStyle()
+        
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
@@ -51,7 +54,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         
         camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:18.7)
         mapView.animate(to: camera)
-        print(isMarkerWithinScreen(marker: location!))
+//        print(isMarkerWithinScreen(marker: location!))
         
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
@@ -68,6 +71,21 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
 //        let bounds = GMSCoordinateBounds(region: region)
         print(isVisible)
         return true
+    }
+    
+    func setStyle() -> Void {
+        
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
+                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+                
+            } else {
+                NSLog("Unable to find style.json")
+            }
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
     }
     
     override func didReceiveMemoryWarning() {

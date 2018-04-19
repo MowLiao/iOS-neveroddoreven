@@ -33,6 +33,7 @@
 		137741262052F1680072A3E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741252052F1680072A3E7 /* QuartzCore.framework */; };
 		137741282052F1730072A3E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741272052F1730072A3E7 /* SystemConfiguration.framework */; };
 		1377412A2052F1790072A3E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741292052F1790072A3E7 /* UIKit.framework */; };
+		13AF878C2088EFD000E18211 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 13AF878B2088EFD000E18211 /* style.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		137741252052F1680072A3E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		137741272052F1730072A3E7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		137741292052F1790072A3E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		13AF878B2088EFD000E18211 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		137740D52052E9C10072A3E7 /* NotYourBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				13AF878A2088EF7F00E18211 /* MapStyle */,
 				13C34BBB2088CBE600107D4B /* View */,
 				13C34BBA2088CBE000107D4B /* Controller */,
 				13C34BB92088CBD300107D4B /* Model */,
@@ -205,6 +208,14 @@
 				1377410D2052F1170072A3E7 /* Accelerate.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13AF878A2088EF7F00E18211 /* MapStyle */ = {
+			isa = PBXGroup;
+			children = (
+				13AF878B2088EFD000E18211 /* style.json */,
+			);
+			name = MapStyle;
 			sourceTree = "<group>";
 		};
 		13C34BB92088CBD300107D4B /* Model */ = {
@@ -342,6 +353,7 @@
 				137740E12052E9C20072A3E7 /* LaunchScreen.storyboard in Resources */,
 				137740DE2052E9C20072A3E7 /* Assets.xcassets in Resources */,
 				137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */,
+				13AF878C2088EFD000E18211 /* style.json in Resources */,
 				1377410B2052F0910072A3E7 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
