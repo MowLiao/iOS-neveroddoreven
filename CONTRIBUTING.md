@@ -1,6 +1,6 @@
--- First time set up  
+# First time set up  
 
-* Set up git:
+Set up git:
 * `git setup --global user.name "firstname secondname"`
 * `git setup --global user.email useremail@domain.ac.uk`
 * `ssh-keygen -t rsa -C "your.email@example.com" -b 4096`
