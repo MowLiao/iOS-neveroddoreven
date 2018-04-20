@@ -10,6 +10,8 @@ import UIKit
 
 class HackController: UIViewController {
     
+    @IBOutlet weak var counterView: CounterView!
+    @IBOutlet weak var counterLabel: UILabel!
     
     override func viewDidLoad()
     {
@@ -36,5 +38,21 @@ class HackController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func pushButtonPressed(_ button: PushButton)
+    {
+        if button.isAddButton
+        {
+            counterView.counter += 1
+        }
+        else
+        {
+            if counterView.counter > 0
+            {
+                counterView.counter -= 1
+            }
+        }
+        counterLabel.text = String(counterView.counter)
+    }
 
 }
