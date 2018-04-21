@@ -12,21 +12,20 @@ import GoogleMaps
 
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     
+   
     @IBOutlet var mapView: GMSMapView!
     
     var locationManager = CLLocationManager()
     var camera = GMSCameraPosition()
     var marker = GMSMarker()
+    var circ = GMSCircle()
+    var hackButton = UIButton()
     
-
     override func loadView() {
-        //let camera = GMSCameraPosition.camera(withLatitude: 53.805114, longitude: -1.555301, zoom: 18.7)
+        let camera = GMSCameraPosition.camera(withTarget: (locationManager.location?.coordinate)!, zoom: 18.7)
+        
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        
-        //Set this to false to disable gestures
-        mapView.settings.setAllGesturesEnabled(true)
-        
-        mapView.settings.myLocationButton = true
+        mapView.settings.myLocationButton = false
         
         view = mapView
         print("loadView")
@@ -38,10 +37,17 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
+        //Add hack button to subview
+        addButton()
+        
+        //create points of interest 
+        createPointOfInterest()
+        
         //Set style of map
-        setStyle()
+//        setStyle()
         
         //Location Manager code to fetch current location
+//        self.locationManager.requestAlwaysAuthorization()
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         print("didload")
@@ -50,27 +56,88 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     //Location Manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let location = locations.last
+        if let location = manager.location {
         
-        camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:18.7)
-        mapView.animate(to: camera)
-//        print(isMarkerWithinScreen(marker: location!))
+            mapView.animate(toLocation: location.coordinate)
+            
+            if (isUserWithinMarkerArea(marker: location, circle: circ.position)){
+                showButton()
+            } else {
+                hideButton()
+            }
+        }
+    }
+    
+
+    
+    func addButton() {
+        hackButton = UIButton(type: UIButtonType.roundedRect)
         
-        //Finally stop updating location otherwise it will come again and again in this delegate
-        self.locationManager.stopUpdatingLocation()
+        hackButton.layer.cornerRadius = 10
+        hackButton.clipsToBounds = true
+        
+        let bgColor = UIColor(red: 59.0/255.0, green: 138.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+//        let textColor = UIColor(red: 100.0/255.0, green: 44.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+        
+        hackButton.setTitleColor(UIColor.white, for: .normal)
+        hackButton.backgroundColor = bgColor
+        
+        
+        hackButton.setTitle("Hack!", for: UIControlState.normal)
+        
+        mapView.addSubview(hackButton)
+        hackButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        //Constraints
+        hackButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        hackButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        hackButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        hackButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        
+        hackButton.addTarget(self, action: #selector(hackAction), for: .touchUpInside)
         
     }
     
-    // WIP
-    func isMarkerWithinScreen(marker: CLLocation) -> Bool {
-        print(marker.coordinate)
-        print(mapView.projection.visibleRegion())
-        let coord = marker.coordinate
-        let isVisible = mapView.projection.contains(coord)
-//        let region = self.mapView.projection.point(for: marker.coordinate)
-//        let bounds = GMSCoordinateBounds(region: region)
-        print(isVisible)
-        return true
+    //Reference the battle screen with its controller. NOTE - add a Storyboard ID - "BattleController" "
+    func hackAction(sender: UIButton!) {
+        present( UIStoryboard(name: "BattleScreen", bundle: nil).instantiateViewController(withIdentifier: "BattleController") as UIViewController, animated: true, completion: nil)
+
+    }
+    
+    func showButton(){
+        hackButton.isHidden = false
+    }
+    
+    func hideButton(){
+        hackButton.isHidden = true
+    }
+    
+    func isUserWithinMarkerArea(marker: CLLocation, circle: CLLocationCoordinate2D) -> Bool {
+        let pointOfInterest = CLLocation(latitude: circle.latitude, longitude: circle.longitude)
+        var bool = false
+        let distanceInMeters = marker.distance(from: pointOfInterest)
+        
+        if (distanceInMeters > circ.radius) {
+            //Do what you need
+             bool = false
+            
+        }
+            else if (distanceInMeters < circ.radius) {
+             bool = true
+        }
+        return bool
+    }
+    
+    
+    func createPointOfInterest() {
+        //simulator city run demo - 37.331205, -122.030763
+        let circleCenter = CLLocation(latitude: 37.331205, longitude: -122.030763)
+        circ = GMSCircle(position: circleCenter.coordinate, radius: 30)
+        
+        circ.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+        circ.strokeColor = .red
+        circ.strokeWidth = 1
+        circ.map = mapView
     }
     
     func setStyle() -> Void {
@@ -94,31 +161,6 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
 
     
-//    @IBAction func changeMapType(sender: AnyObject) {
-//        let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.actionSheet)
-//        
-//        let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-//            self.mapView.mapType = GMSMapViewType.normal
-//        }
-//        
-//        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-//            self.mapView.mapType = GMSMapViewType.terrain
-//        }
-//        
-//        let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-//            self.mapView.mapType = GMSMapViewType.hybrid
-//        }
-//        
-//        let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
-//            
-//        }
-//        
-//        actionSheet.addAction(normalMapTypeAction)
-//        actionSheet.addAction(terrainMapTypeAction)
-//        actionSheet.addAction(hybridMapTypeAction)
-//        actionSheet.addAction(cancelAction)
-//        
-//        present(actionSheet, animated: true, completion: nil)
-//    }
+
 }
 

@@ -39,6 +39,9 @@
 		E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4586C208A074200CCC6E6 /* PushButton.swift */; };
 		E7B45878208A162600CCC6E6 /* HackScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B45877208A162600CCC6E6 /* HackScreen.storyboard */; };
 		E7B4587C208A16B800CCC6E6 /* HackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4587B208A16B800CCC6E6 /* HackController.swift */; };
+		DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AA60B208B70D70068BA02 /* TutorialController.swift */; };
+		DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */; };
+		DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,11 +95,17 @@
 		137741272052F1730072A3E7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		137741292052F1790072A3E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		13AF878B2088EFD000E18211 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		E7975E9E208A3CB3006A6D00 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedBarView.swift; sourceTree = "<group>"; };
 		E7B4586C208A074200CCC6E6 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushButton.swift; path = ../PushButton.swift; sourceTree = "<group>"; };
 		E7B45877208A162600CCC6E6 /* HackScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HackScreen.storyboard; sourceTree = "<group>"; };
 		E7B4587B208A16B800CCC6E6 /* HackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HackController.swift; sourceTree = "<group>"; };
+=======
+		DF5AA60B208B70D70068BA02 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
+		DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
+>>>>>>> origin
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +251,7 @@
 			children = (
 				E7B4587B208A16B800CCC6E6 /* HackController.swift */,
 				137740D82052E9C20072A3E7 /* MapController.swift */,
+				DF5AA60B208B70D70068BA02 /* TutorialController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -251,7 +261,12 @@
 			children = (
 				137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */,
 				137740DA2052E9C20072A3E7 /* MapScreen.storyboard */,
+<<<<<<< HEAD
 				E7B45877208A162600CCC6E6 /* HackScreen.storyboard */,
+=======
+				DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */,
+				DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */,
+>>>>>>> origin
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -378,6 +393,8 @@
 				137740DE2052E9C20072A3E7 /* Assets.xcassets in Resources */,
 				137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */,
 				13AF878C2088EFD000E18211 /* style.json in Resources */,
+				DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */,
+				DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */,
 				1377410B2052F0910072A3E7 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,10 +422,14 @@
 			files = (
 				137740D92052E9C20072A3E7 /* MapController.swift in Sources */,
 				137740D72052E9C20072A3E7 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				E7B4587C208A16B800CCC6E6 /* HackController.swift in Sources */,
 				E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */,
 				E7975E9F208A3CB3006A6D00 /* CounterView.swift in Sources */,
 				E7A7F5F9208B6BF0001233FD /* AnimatedBarView.swift in Sources */,
+=======
+				DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */,
+>>>>>>> origin
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
