@@ -34,6 +34,7 @@
 		137741282052F1730072A3E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741272052F1730072A3E7 /* SystemConfiguration.framework */; };
 		1377412A2052F1790072A3E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741292052F1790072A3E7 /* UIKit.framework */; };
 		13AF878C2088EFD000E18211 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 13AF878B2088EFD000E18211 /* style.json */; };
+		DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AA60B208B70D70068BA02 /* TutorialController.swift */; };
 		DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */; };
 		DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		137741272052F1730072A3E7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		137741292052F1790072A3E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		13AF878B2088EFD000E18211 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		DF5AA60B208B70D70068BA02 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
 		DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				137740D82052E9C20072A3E7 /* MapController.swift */,
+				DF5AA60B208B70D70068BA02 /* TutorialController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				137740D92052E9C20072A3E7 /* MapController.swift in Sources */,
 				137740D72052E9C20072A3E7 /* AppDelegate.swift in Sources */,
+				DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
