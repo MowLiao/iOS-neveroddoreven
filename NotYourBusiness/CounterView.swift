@@ -23,27 +23,39 @@ import UIKit
     }
     
     @IBInspectable var counter: Int = 5
+    { didSet
+        {
+            if counter <= Constants.numberOfCounts
+            {
+                setNeedsDisplay()
+            }
+        }
+            
+    }
+    
+    
     @IBInspectable var outlineColor: UIColor = UIColor.blue
     @IBInspectable var counterColor: UIColor = UIColor.orange
     
     override func draw(_ rect:CGRect)
     {
         let center = CGPoint(
-                x: bounds.width / 2,
-                y: bounds.height / 2)
+            x: bounds.width / 2,
+            y: bounds.height / 2)
         
-        let radius: CGFloat = max(bounds.width, bounds.height)
+        let radius: CGFloat = min(bounds.width, bounds.height)
         
         let startAngle: CGFloat = 3 * .pi / 4
         let endAngle: CGFloat = .pi / 4
+        let pathRadius: CGFloat = radius/2 - Constants.arcWidth/2
         
         // Define arc path using above
         let path = UIBezierPath(
-                arcCenter: center,
-                radius: radius/2 - Constants.arcWidth/2,
-                startAngle: startAngle,
-                endAngle: endAngle,
-                clockwise: true)
+            arcCenter: center,
+            radius: pathRadius,
+            startAngle: startAngle,
+            endAngle: endAngle,
+            clockwise: true)
         
         path.lineWidth = Constants.arcWidth
         counterColor.setStroke()
@@ -53,25 +65,37 @@ import UIKit
         let angleDifference : CGFloat = 2 * .pi - startAngle + endAngle
         let arcLengthPerCount = angleDifference / CGFloat(Constants.numberOfCounts)
         let outlineEndAngle = arcLengthPerCount * CGFloat(counter) + startAngle
+//        
+//        let outlinePath = UIBezierPath(
+//                arcCenter: center,
+//                radius: bounds.width/2 - Constants.halfOfLineWidth,
+//                startAngle: startAngle,
+//                endAngle: outlineEndAngle,
+//                clockwise: true)
+//        
+//        outlinePath.addArc(
+//                withCenter: center,
+//                radius: bounds.width/2 - Constants.arcWidth + Constants.halfOfLineWidth,
+//                startAngle: outlineEndAngle,
+//                endAngle: startAngle,
+//                clockwise: false)
+//        
+//        outlinePath.close()
+//        outlineColor.setStroke()
+//        outlinePath.lineWidth = Constants.lineWidth
+//        outlinePath.stroke()
         
-        let outlinePath = UIBezierPath(
-                arcCenter: center,
-                radius: bounds.width/2 - Constants.halfOfLineWidth,
-                startAngle: startAngle,
-                endAngle: outlineEndAngle,
-                clockwise: true)
+        let pathfill = UIBezierPath(
+            arcCenter: center,
+            radius: pathRadius,
+            startAngle: startAngle,
+            endAngle: outlineEndAngle,
+            clockwise: true)
         
-        outlinePath.addArc(
-                withCenter: center,
-                radius: bounds.width/2 - Constants.arcWidth + Constants.halfOfLineWidth,
-                startAngle: outlineEndAngle,
-                endAngle: startAngle,
-                clockwise: false)
-        
-        outlinePath.close()
+        pathfill.lineWidth = Constants.arcWidth/1.5
         outlineColor.setStroke()
-        outlinePath.lineWidth = Constants.lineWidth
-        outlinePath.stroke()
+        pathfill.stroke()
+        
         
         
     }

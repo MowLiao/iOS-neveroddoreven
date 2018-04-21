@@ -21,85 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14c-Jc-SdR" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
-                                <rect key="frame" x="112" y="417" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7XI-p0-zie"/>
-                                    <constraint firstAttribute="width" constant="150" id="qyR-aA-DJc"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.20210466675913616" green="0.62123691099476441" blue="0.2622711976338315" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="pushButtonPressed:" destination="8NJ-qe-Auj" eventType="touchUpInside" id="wGT-IY-hEh"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WMF-tz-Zj7">
-                                <rect key="frame" x="265" y="318" width="60" height="60"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJS-zK-fj6" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
-                                <rect key="frame" x="157" y="587" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="MuJ-VN-CoB"/>
-                                    <constraint firstAttribute="height" constant="60" id="QmV-N4-AKk"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="1" green="0.2909155632" blue="0.31025102409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="pushButtonPressed:" destination="8NJ-qe-Auj" eventType="touchUpInside" id="BS7-BL-4kc"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-7i-Ite" customClass="CounterView" customModule="NotYourBusiness" customModuleProvider="target">
-                                <rect key="frame" x="72" y="147" width="230" height="230"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-eX-Rib" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3y-xY-ONB">
-                                        <rect key="frame" x="104.5" y="93.5" width="22.5" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iR1-aj-jEe" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="208" width="375" height="250"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="b3y-xY-ONB" firstAttribute="centerY" secondItem="ENN-7i-Ite" secondAttribute="centerY" id="9IH-a8-2OS"/>
-                                    <constraint firstAttribute="width" constant="230" id="WRn-RA-0gf"/>
-                                    <constraint firstAttribute="height" constant="230" id="nAr-QZ-KjK"/>
-                                    <constraint firstItem="b3y-xY-ONB" firstAttribute="centerX" secondItem="ENN-7i-Ite" secondAttribute="centerX" id="ycQ-4T-w4E"/>
+                                    <constraint firstItem="iR1-aj-jEe" firstAttribute="centerY" secondItem="TgG-eX-Rib" secondAttribute="centerY" id="VUF-hd-U1D"/>
+                                    <constraint firstItem="iR1-aj-jEe" firstAttribute="centerX" secondItem="TgG-eX-Rib" secondAttribute="centerX" id="zFN-0A-TgK"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="0.21212460192776961" green="0.83066099476439792" blue="0.0073522816912578275" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                        <color key="value" red="0.047120418848167533" green="0.046603758781483061" blue="0.04660186879514519" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="14c-Jc-SdR" firstAttribute="top" secondItem="ENN-7i-Ite" secondAttribute="bottom" constant="40" id="2v8-BJ-plz"/>
-                            <constraint firstAttribute="bottom" secondItem="OJS-zK-fj6" secondAttribute="bottom" constant="20" id="4jI-mN-tDG"/>
-                            <constraint firstItem="WMF-tz-Zj7" firstAttribute="centerY" secondItem="vJb-3r-aMG" secondAttribute="centerY" id="4m2-ky-zSA"/>
-                            <constraint firstItem="14c-Jc-SdR" firstAttribute="centerX" secondItem="vJb-3r-aMG" secondAttribute="centerX" id="9rq-eg-Fcg"/>
-                            <constraint firstItem="OJS-zK-fj6" firstAttribute="top" secondItem="14c-Jc-SdR" secondAttribute="bottom" constant="20" id="B9V-kQ-cxv"/>
-                            <constraint firstItem="ENN-7i-Ite" firstAttribute="centerX" secondItem="vJb-3r-aMG" secondAttribute="centerX" id="Q4Y-Rw-zLx"/>
-                            <constraint firstItem="OJS-zK-fj6" firstAttribute="centerX" secondItem="vJb-3r-aMG" secondAttribute="centerX" id="RCp-yl-Qqz"/>
+                            <constraint firstItem="TgG-eX-Rib" firstAttribute="height" secondItem="vJb-3r-aMG" secondAttribute="height" id="AAS-Kc-H5P"/>
+                            <constraint firstItem="TgG-eX-Rib" firstAttribute="centerX" secondItem="vJb-3r-aMG" secondAttribute="centerX" id="VQp-bX-xUk"/>
+                            <constraint firstItem="TgG-eX-Rib" firstAttribute="width" secondItem="vJb-3r-aMG" secondAttribute="width" id="io3-GU-Jqt"/>
+                            <constraint firstItem="TgG-eX-Rib" firstAttribute="centerY" secondItem="vJb-3r-aMG" secondAttribute="centerY" id="qlm-Kh-ZhI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="counterLabel" destination="b3y-xY-ONB" id="MJy-Gh-XyE"/>
-                        <outlet property="counterView" destination="ENN-7i-Ite" id="xTK-TP-YIp"/>
+                        <outlet property="animateBar" destination="TgG-eX-Rib" id="xLG-nS-Buy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ou-tk-xK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
