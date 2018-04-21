@@ -24,11 +24,12 @@
                         <accessibility key="accessibilityConfiguration" identifier="mapView"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8bC-Xf-vdC" id="27h-qo-Cjv"/>
+                        <outlet property="mapView" destination="8bC-Xf-vdC" id="zIc-zv-0w5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>
