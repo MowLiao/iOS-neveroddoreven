@@ -12,24 +12,20 @@ import GoogleMaps
 
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     
+   
     @IBOutlet var mapView: GMSMapView!
     
-
     var locationManager = CLLocationManager()
     var camera = GMSCameraPosition()
     var marker = GMSMarker()
     var circ = GMSCircle()
+    var hackButton = UIButton()
     
-    @IBOutlet weak var hackButton: UIButton!
-
     override func loadView() {
-        //let camera = GMSCameraPosition.camera(withLatitude: 53.805114, longitude: -1.555301, zoom: 18.7)
+        let camera = GMSCameraPosition.camera(withTarget: (locationManager.location?.coordinate)!, zoom: 18.7)
+        
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        
-        //Set this to false to disable gestures
-        mapView.settings.setAllGesturesEnabled(true)
-        
-        mapView.settings.myLocationButton = true
+        mapView.settings.myLocationButton = false
         
         view = mapView
         print("loadView")
@@ -41,13 +37,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
-        print(mapView.subviews)
-
-        //WIP
-        //let btn: UIButton = UIButton(type: UIButtonType.roundedRect)
-        //hackButton.frame = CGRect(x: 100, y: 100, width: 100, height: 30)
-        //hackButton.setTitle("MyButton", for: UIControlState.normal)
-        
+        //Add hack button to subview
+        addButton()
         
         //create points of interest 
         createPointOfInterest()
@@ -62,29 +53,65 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         print("didload")
     }
     
-    
     //Location Manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = manager.location {
         
-            let camera = GMSCameraPosition.camera(withLatitude:  location.coordinate.latitude , longitude: location.coordinate.longitude, zoom:18.7)
-            mapView.animate(to: camera)
-            
-
+            mapView.animate(toLocation: location.coordinate)
             
             if (isUserWithinMarkerArea(marker: location, circle: circ.position)){
-                
+                showButton()
+            } else {
+                hideButton()
             }
         }
-        
-        
-        //Finally stop updating location otherwise it will come again and again in this delegate
-//        self.locationManager.stopUpdatingLocation()
-        
     }
     
 
+    
+    func addButton() {
+        hackButton = UIButton(type: UIButtonType.roundedRect)
+        
+        hackButton.layer.cornerRadius = 10
+        hackButton.clipsToBounds = true
+        
+        let bgColor = UIColor(red: 59.0/255.0, green: 138.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+//        let textColor = UIColor(red: 100.0/255.0, green: 44.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+        
+        hackButton.setTitleColor(UIColor.white, for: .normal)
+        hackButton.backgroundColor = bgColor
+        
+        
+        hackButton.setTitle("Hack!", for: UIControlState.normal)
+        
+        mapView.addSubview(hackButton)
+        hackButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        //Constraints
+        hackButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        hackButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        hackButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        hackButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        
+        hackButton.addTarget(self, action: #selector(hackAction), for: .touchUpInside)
+        
+    }
+    
+    //Reference the battle screen with its controller. NOTE - add a Storyboard ID - "BattleController" "
+    func hackAction(sender: UIButton!) {
+        present( UIStoryboard(name: "BattleScreen", bundle: nil).instantiateViewController(withIdentifier: "BattleController") as UIViewController, animated: true, completion: nil)
+
+    }
+    
+    func showButton(){
+        hackButton.isHidden = false
+    }
+    
+    func hideButton(){
+        hackButton.isHidden = true
+    }
+    
     func isUserWithinMarkerArea(marker: CLLocation, circle: CLLocationCoordinate2D) -> Bool {
         let pointOfInterest = CLLocation(latitude: circle.latitude, longitude: circle.longitude)
         var bool = false
@@ -105,13 +132,12 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     func createPointOfInterest() {
         //simulator city run demo - 37.331205, -122.030763
         let circleCenter = CLLocation(latitude: 37.331205, longitude: -122.030763)
-        circ = GMSCircle(position: circleCenter.coordinate, radius: 10)
+        circ = GMSCircle(position: circleCenter.coordinate, radius: 30)
         
         circ.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
         circ.strokeColor = .red
         circ.strokeWidth = 1
         circ.map = mapView
-        
     }
     
     func setStyle() -> Void {
