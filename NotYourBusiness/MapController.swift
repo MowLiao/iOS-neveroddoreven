@@ -16,7 +16,11 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
     @IBOutlet var mapView: GMSMapView!
     
     // VARIABLE SET BY MINIGAME (increments if success)
-    var currentFilter: Int = 1
+    var currentFilter: Int = 1 {
+        didSet {
+            //code for setting filter
+        }
+    }
     
     
     var locationManager = CLLocationManager()
@@ -26,7 +30,7 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
     var hackButton = UIButton()
     
     override func loadView() {
-        let camera = GMSCameraPosition.camera(withTarget: (locationManager.location?.coordinate)!, zoom: 18.7)
+        //let camera = GMSCameraPosition.camera(withTarget: (locationManager.location?.coordinate)!, zoom: 18.7)
         
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.settings.myLocationButton = false
@@ -109,7 +113,7 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
         vc.filterToSet = self.currentFilter
     }
     
-    //Reference the battle screen with its controller. NOTE - add a Storyboard ID - "BattleController" "
+    // Segue to Hack screen
     func hackAction(sender: UIButton!) {
         
         print("Starting Hack sequence")

@@ -25,14 +25,16 @@ class HackController: UIViewController {
     var totalTime: Double = 3.0             // Total time to get across
     var progress: Int = 1
     
-    // On difficulty variable change, maximum of 3
+    
+    // On difficulty variable change, reset level, maximum of 3
     var difficultyLevel: Int = 1
     {
         didSet
         {
-            clearLevel()
-            activateLevel(pointerSpeed: difficultyLevel)
-            setIndicate(indicator: difficultyLevel-1)
+            self.clearLevel(clearAll: false)
+            self.pointerPosition = 0
+            self.activateLevel(pointerSpeed: self.difficultyLevel)
+            //animateBar.setNeedsDisplay()
         }
     }
     
@@ -55,17 +57,21 @@ class HackController: UIViewController {
             userInfo: nil,
             repeats: true)
         
-        animateBar.drawHighlight(diffIn: CGFloat(pointerSpeed))
+        //animateBar.drawHighlight()//diffIn: CGFloat(pointerSpeed))
         animateBar.drawPointer()
     }
     
     
     // Clear current pointer and highlight region, stops timer
-    func clearLevel()
+    func clearLevel(clearAll: Bool)
     {
-        tickTimer.invalidate()
+        print("clearing level")
         animateBar.pointerLayer.removeFromSuperlayer()
-        animateBar.highlightLayer.removeFromSuperlayer()
+        if clearAll
+        {
+            tickTimer.invalidate()
+            animateBar.highlightLayer.removeFromSuperlayer()
+        }
     }
     
     
@@ -75,34 +81,27 @@ class HackController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        indicate1.layer.borderWidth = 2
-        indicate1.layer.borderColor = UIColor.green.cgColor
-        indicate2.layer.borderWidth = 2
-        indicate2.layer.borderColor = UIColor.green.cgColor
-        indicate3.layer.borderWidth = 2
-        indicate3.layer.borderColor = UIColor.green.cgColor
-        
         animateBar.drawBG()
+        animateBar.drawHighlight()
         activateLevel(pointerSpeed: difficultyLevel)
         
-        // counterLabel.text = String(counterView.counter)
     }
     
     
     // Stops each indicator and sets as the following string
-    func setIndicate(indicator: Int)
+    func setIndicate(indicator: Int, successIn: Bool)
     {
         if indicator==1
         {
-            indicate1.done(inString: "1")
+            indicate1.done(inString: "1", success: successIn)
         }
         if indicator==2
         {
-            indicate2.done(inString: "2")
+            indicate2.done(inString: "2", success: successIn)
         }
         if indicator==3
         {
-            indicate3.done(inString: "3")
+            indicate3.done(inString: "3", success: successIn)
         }
     }
     
@@ -118,7 +117,7 @@ class HackController: UIViewController {
                 toptobottom = -1 }
         }
         else
-        {   if (pointerPosition <= 0.0005)
+        {   if (pointerPosition <= 0.0005)          // Not 0 due to Swift rounding error
             {   pointerPosition += positionIncrement
                 toptobottom = 1 }
             else
@@ -138,26 +137,53 @@ class HackController: UIViewController {
     // Called when buttons are pressed
     @IBAction func pushButtonPressed(_ button: PushButton)
     {
+        // Hack button logic
         if button.isHackButton
         {
-            if difficultyLevel < 3
+            self.tickTimer.invalidate()
+            // Logic for whether pointer is in highlighted region
+            if (self.pointerPosition < 0.625) && (self.pointerPosition > 0.375)
             {
-                difficultyLevel += 1
-                print("clearing level")
+                self.setIndicate(indicator: self.difficultyLevel, successIn: true)
+                // Check if last button (different logic needed)
+                if self.difficultyLevel < 3
+                {
+                    // Delay for 1 second to show result -> next level
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5)
+                    {
+                        self.difficultyLevel += 1
+                    }
+                }
+                // If last button, clear whole level
+                else
+                {
+                    tickTimer.invalidate()
+                    clearLevel(clearAll: true)
+                    self.setIndicate(indicator: self.difficultyLevel, successIn: true)
+                    // 2 second delay after all three are done
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2)
+                    {
+                        self.filterToSet += 1
+                        self.back(self)
+                    }
+                }
             }
+            // If fail to get region
             else
             {
-                tickTimer.invalidate()
-                clearLevel()
-                setIndicate(indicator: 3)
-                // 3 second delay after all three are done
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3)
+                // Trigger indicator button (in false mode)
+                self.setIndicate(indicator: self.difficultyLevel, successIn: false)
+                // Delay for 1 second to show result -> same level
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5)
                 {
-                    self.filterToSet += 1
-                    self.back(self)
+                    // Manually restart level
+                    self.pointerPosition = 0
+                    self.clearLevel(clearAll: false)
+                    self.activateLevel(pointerSpeed: self.difficultyLevel)
                 }
             }
         }
+        // Cancel button logic
         else
         {
             self.back(self)
@@ -167,11 +193,13 @@ class HackController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!)
     {
+        // Set filter of map view
         let vc = segue.destination as! MapController
         vc.currentFilter = self.filterToSet
     }
     
     
+    // Perform unwinding segue to map screen
     func back(_ sender: Any)
     {
         self.performSegue(withIdentifier: "MapSegue", sender: self)

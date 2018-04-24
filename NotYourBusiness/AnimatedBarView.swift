@@ -58,9 +58,9 @@ class AnimatedBarView: UIView
     
     
     // HIGHLIGHT CODE
-    private func createHighlightPath(diffIn: CGFloat)
+    private func createHighlightPath()//diffIn: CGFloat)
     {
-        let diffSection =  totalHeight / (2+diffIn) / 2
+        let diffSection =  totalHeight / 8//(2+diffIn) / 2
         let startX = bounds.width/2
         let startY = (bounds.height/2) - diffSection
         let endX = startX
@@ -70,9 +70,9 @@ class AnimatedBarView: UIView
         highlightPath.addLine(to: CGPoint(x: endX, y: endY))
     }
     
-    func drawHighlight(diffIn: CGFloat)
+    func drawHighlight()//diffIn: CGFloat)
     {
-        createHighlightPath(diffIn: diffIn)
+        createHighlightPath()//diffIn: diffIn)
         
         highlightLayer.path = highlightPath.cgPath
         highlightLayer.lineWidth = BGWidth - pointerPad
@@ -102,7 +102,7 @@ class AnimatedBarView: UIView
         pointerLayer.path = pointerPath.cgPath
         pointerLayer.lineWidth = BGWidth - pointerPad
         pointerLayer.fillColor = nil
-        pointerLayer.strokeColor = UIColor.black.cgColor
+        pointerLayer.strokeColor = #colorLiteral(red: 0.1980366409, green: 0.1980422437, blue: 0.1980392635, alpha: 1).cgColor
         
         self.layer.addSublayer(pointerLayer)
     }
