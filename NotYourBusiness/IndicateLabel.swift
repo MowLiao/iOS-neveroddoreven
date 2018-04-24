@@ -8,9 +8,22 @@
 
 import UIKit
 
-class IndicateLabel: UILabel {
+/**
+ A class for indicators to show what level the user is on. Inherits UILabel and is intended to show a single character.
+ This class has the following functions:
+ - customInit() -> Void
+ - jumble() -> Void
+ - flash() -> Void
+ - done(String, Bool) -> Void
+ - fail() -> Void
+ */
 
+class IndicateLabel: UILabel {
+    
+    // Array of characters to jumble() through.
     let letters = Array("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".characters)
+    var timer: Timer!
+    
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -18,17 +31,20 @@ class IndicateLabel: UILabel {
         self.customInit()
     }
     
+    
     override init (frame: CGRect)
     {
         super.init(frame: frame)
         self.customInit()
     }
     
-    var timer: Timer!
     
+    /**
+     Called in override init(). Starts the timer to call jumble() per tick, and sets appearance.
+     */
     func customInit()
     {
-        // Set own timer
+        // Set own timer which calls jumble() per tick (every 100ms)
         timer = Timer.scheduledTimer(
             timeInterval: 0.1,
             target: self,
@@ -41,15 +57,23 @@ class IndicateLabel: UILabel {
         self.layer.borderColor = UIColor.green.cgColor
     }
     
+    
+    /**
+     Each time this function is called, a random letter from letters array is set as the label text.
+     */
     @objc func jumble()
     {
         let rand = arc4random_uniform(UInt32(letters.count))
         self.text = String(letters[Int(rand)])
     }
     
-    // Flash function when Hack button is pressed
+    
+    /**
+     Animation function to make the button flash in transparency.
+     */
     func flash()
     {
+        // Flashes 3 times, 250 ms each
         let flash = CABasicAnimation(keyPath: "opacity")
         flash.duration = 0.25
         flash.fromValue = 1
@@ -60,11 +84,32 @@ class IndicateLabel: UILabel {
         layer.add(flash, forKey: nil)
     }
     
-    // Animation for whether user succeeded or not
+    
+    /**
+     Sequence of events when the user fails the interaction: Button flashes red once before returning to old colour.
+     */
+    func fail()
+    {
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.backgroundColor = UIColor.red.cgColor
+        UIView.animate(withDuration: 0.75, delay:0, options: UIViewAnimationOptions.allowUserInteraction, animations:
+            {
+                () -> Void in
+                self.layer.backgroundColor = #colorLiteral(red: 0, green: 0.3752856255, blue: 0, alpha: 1).cgColor
+                self.layer.borderColor = UIColor.green.cgColor
+        } )
+        
+    }
+    
+    /**
+     Sequence of events when the user interacts: changes depending on whether user is successful or not. If user is successful, flashes and set background to be bright green. If user is not successful, flashes before calling fail().
+     - argument inString: Final string to be displayed
+     - argument success: Bool representation of whether user is successful
+     */
     func done(inString: String, success: Bool)
     {
         self.flash()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25)
         {
             if success
             {
@@ -77,19 +122,6 @@ class IndicateLabel: UILabel {
                 self.fail()
             }
         }
-    }
-    
-    func fail()
-    {
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.backgroundColor = UIColor.red.cgColor
-        UIView.animate(withDuration: 0.5, delay:0, options: UIViewAnimationOptions.allowUserInteraction, animations:
-            {
-                () -> Void in
-                self.layer.backgroundColor = #colorLiteral(red: 0, green: 0.3752856255, blue: 0, alpha: 1).cgColor
-                self.layer.borderColor = UIColor.green.cgColor
-            } )
-        
     }
 
     /*

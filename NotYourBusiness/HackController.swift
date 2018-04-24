@@ -8,8 +8,20 @@
 
 import UIKit
 
+/**
+ Controller class defining the behaviour of the Hack screen attached to the Map View. Utilises AnimatedBarView.swift, IndicateLabel.swift and PushButton.swift()
+ This class has the following functions:
+ - activateLevel(Int) -> Void
+ - clearLevel(Bool) -> Void
+ - setIndicate(Int, Bool) -> Void
+ - showAnimate() -> Void
+ - pushButtonPressed(PushButton) -> Void
+ - back(Any) -> Void
+ */
+
 class HackController: UIViewController {
     
+    // Linked interface variables
     @IBOutlet weak var animateBar: AnimatedBarView!
     @IBOutlet weak var hackButton: PushButton!
     @IBOutlet weak var cancelButton: PushButton!
@@ -17,6 +29,7 @@ class HackController: UIViewController {
     @IBOutlet weak var indicate2: IndicateLabel!
     @IBOutlet weak var indicate3: IndicateLabel!
     
+    // Preset class variables
     var filterToSet: Int = 0
     var tickTimer: Timer!                   // Overall Timer
     var pointerPosition: Double = 0         // Start position, default 0
@@ -39,7 +52,25 @@ class HackController: UIViewController {
     }
     
     
-    // Create a new pointer and highlight region
+    
+    /**
+     Overrides viewDidLoad(): draws background bar and highlight region of animateBar. Also calls activateLevel()
+     */
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        animateBar.drawBG()
+        animateBar.drawHighlight()
+        activateLevel(pointerSpeed: difficultyLevel)
+        
+    }
+    
+    /**
+     Creates a set of components (timer, pointer, pointer direction) according to the current level and resets the class variables for a new level.
+     - argument pointerSpeed: Int to pass to drawing the highlight region. Currently commented out due to weird... bugs?
+     */
     func activateLevel(pointerSpeed: Int)
     {
         // (P)reset values for pointer
@@ -62,33 +93,26 @@ class HackController: UIViewController {
     }
     
     
-    // Clear current pointer and highlight region, stops timer
+    /**
+     Function to clear current pointer and stop timer. If clearAll is true, also clears highlight region
+     */
     func clearLevel(clearAll: Bool)
     {
         print("clearing level")
         animateBar.pointerLayer.removeFromSuperlayer()
+        tickTimer.invalidate()
         if clearAll
         {
-            tickTimer.invalidate()
             animateBar.highlightLayer.removeFromSuperlayer()
         }
     }
     
     
-    // On screen load
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        animateBar.drawBG()
-        animateBar.drawHighlight()
-        activateLevel(pointerSpeed: difficultyLevel)
-        
-    }
-    
-    
-    // Stops each indicator and sets as the following string
+    /**
+     Function to send a success state to the specific level indicator. Calls done() method of indicator to display relevant animation depending on sucess state.
+     - argument indicator: Int representation of the indicator to be used in an if statement. Could've probaby used a pointer here but eh.
+     - argument successIn: Bool representation of the success state.
+     */
     func setIndicate(indicator: Int, successIn: Bool)
     {
         if indicator==1
@@ -106,7 +130,9 @@ class HackController: UIViewController {
     }
     
     
-    // Animation calculation for the black bar position
+    /**
+     Called each time the pointer timer ticks: calculates next position of the pointer and sets it.
+     */
     @objc func showAnimate()
     {
         if (toptobottom == 1)
@@ -123,17 +149,14 @@ class HackController: UIViewController {
             else
             {   pointerPosition -= positionIncrement }
         }
+        // Set the calculated pointer position
         animateBar.animate = pointerPosition
     }
     
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    
+    /**
+     Logic for when the Hack button is pressed: calculates whether pointer is in the highlight region, then tells relevant indicator the result and resets/sets the level depending on whether the user is successful. Clears whole level and calls back() if it is the last level.
+     */
     // Called when buttons are pressed
     @IBAction func pushButtonPressed(_ button: PushButton)
     {
@@ -191,6 +214,16 @@ class HackController: UIViewController {
     }
     
     
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /**
+     Overrides prepare(). Sends self.filterToSet to MapController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any!)
     {
         // Set filter of map view
@@ -199,7 +232,9 @@ class HackController: UIViewController {
     }
     
     
-    // Perform unwinding segue to map screen
+    /**
+     Perform unwinding segue to map screen
+     */
     func back(_ sender: Any)
     {
         self.performSegue(withIdentifier: "MapSegue", sender: self)

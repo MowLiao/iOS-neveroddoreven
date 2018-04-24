@@ -8,14 +8,17 @@
 
 import UIKit
 
+/**
+ Custom UIButton to create a round button, using the draw method. There're other methods of doing this, but I figured it'd be nice to experiment with the draw method.
+ */
+
 @IBDesignable
 class PushButton: UIButton
 {
     @IBInspectable var fillColor: UIColor = UIColor.green
     @IBInspectable var isHackButton: Bool = true
 
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    // Creates a round button
     override func draw(_ rect: CGRect)
     {
         // Drawing code
