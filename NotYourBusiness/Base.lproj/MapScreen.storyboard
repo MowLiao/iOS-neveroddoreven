@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G19009" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G20015" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NotYourBusiness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapController" customModule="NotYourBusiness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,11 +24,123 @@
                         <accessibility key="accessibilityConfiguration" identifier="mapView"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8bC-Xf-vdC" id="27h-qo-Cjv"/>
+                        <outlet property="mapView" destination="8bC-Xf-vdC" id="zIc-zv-0w5"/>
+                        <segue destination="GfH-Mg-pU4" kind="show" identifier="HackSegue" id="gtR-0i-8PL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+        <!--Hack Controller-->
+        <scene sceneID="Y0H-yn-YMy">
+            <objects>
+                <viewController storyboardIdentifier="HackVC" id="GfH-Mg-pU4" customClass="HackController" customModule="NotYourBusiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NtG-tS-NxF"/>
+                        <viewControllerLayoutGuide type="bottom" id="FGm-WL-GgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wKV-4V-We7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYV-fk-Y4Y" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-jE-mDY" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjF-5H-02L" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
+                                                <rect key="frame" x="268" y="374" width="69" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <state key="normal" title="CANCEL">
+                                                    <color key="titleColor" red="0.63185127620000003" green="0.192139269" blue="0.17764019549999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="0.4695476113" green="0.1242076344" blue="0.096475744929999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHackButton" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymk-uG-HO7" customClass="IndicateLabel" customModule="NotYourBusiness" customModuleProvider="target">
+                                                <rect key="frame" x="67" y="270" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.31156292260000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIh-p6-o1B" customClass="IndicateLabel" customModule="NotYourBusiness" customModuleProvider="target">
+                                                <rect key="frame" x="67" y="318" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.31156292260000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNL-KB-dq7" customClass="IndicateLabel" customModule="NotYourBusiness" customModuleProvider="target">
+                                                <rect key="frame" x="67" y="366" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.31156292260000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kod-xf-p4p" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
+                                                <rect key="frame" x="265" y="289" width="75" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="HACK">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHackButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pushButtonPressed:" destination="GfH-Mg-pU4" eventType="touchUpInside" id="qe9-ne-byn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XZU-jE-mDY" firstAttribute="width" secondItem="yYV-fk-Y4Y" secondAttribute="width" id="2f5-vX-ZFf"/>
+                                    <constraint firstItem="XZU-jE-mDY" firstAttribute="centerY" secondItem="yYV-fk-Y4Y" secondAttribute="centerY" id="IyE-yE-bdL"/>
+                                    <constraint firstItem="XZU-jE-mDY" firstAttribute="height" secondItem="yYV-fk-Y4Y" secondAttribute="height" id="r7l-pg-PbY"/>
+                                    <constraint firstItem="XZU-jE-mDY" firstAttribute="centerX" secondItem="yYV-fk-Y4Y" secondAttribute="centerX" id="r8b-pa-ss1"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yYV-fk-Y4Y" firstAttribute="width" secondItem="wKV-4V-We7" secondAttribute="width" id="7uV-7g-APu"/>
+                            <constraint firstItem="yYV-fk-Y4Y" firstAttribute="centerY" secondItem="wKV-4V-We7" secondAttribute="centerY" id="ZUx-3q-fjc"/>
+                            <constraint firstItem="yYV-fk-Y4Y" firstAttribute="height" secondItem="wKV-4V-We7" secondAttribute="height" id="dAc-HY-5kx"/>
+                            <constraint firstItem="yYV-fk-Y4Y" firstAttribute="centerX" secondItem="wKV-4V-We7" secondAttribute="centerX" id="onw-TX-80F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animateBar" destination="XZU-jE-mDY" id="QQZ-GQ-YS4"/>
+                        <outlet property="cancelButton" destination="mjF-5H-02L" id="ZJl-0G-pt5"/>
+                        <outlet property="hackButton" destination="Kod-xf-p4p" id="SlI-Ix-eaq"/>
+                        <outlet property="indicate1" destination="ymk-uG-HO7" id="4ZC-om-4Q4"/>
+                        <outlet property="indicate2" destination="lIh-p6-o1B" id="FVB-8r-ICC"/>
+                        <outlet property="indicate3" destination="MNL-KB-dq7" id="79B-4W-5p1"/>
+                        <segue destination="YxX-gp-Csh" kind="unwind" identifier="MapSegue" unwindAction="unwindFromHackWithSegue:" id="72Z-K6-aVG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTL-TB-44B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YxX-gp-Csh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="36"/>
         </scene>
     </scenes>
 </document>
