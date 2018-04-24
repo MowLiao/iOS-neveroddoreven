@@ -258,6 +258,7 @@
 			children = (
 				137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */,
 				137740DA2052E9C20072A3E7 /* MapScreen.storyboard */,
+				E7B45877208A162600CCC6E6 /* HackScreen.storyboard */,
 				DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */,
 				DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */,
 			);
