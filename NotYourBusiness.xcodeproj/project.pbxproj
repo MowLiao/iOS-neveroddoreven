@@ -99,7 +99,7 @@
 		DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
 		E70CC824208E8C00004F4CDE /* IndicateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicateLabel.swift; sourceTree = "<group>"; };
 		E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedBarView.swift; sourceTree = "<group>"; };
-		E7B4586C208A074200CCC6E6 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushButton.swift; path = ../PushButton.swift; sourceTree = "<group>"; };
+		E7B4586C208A074200CCC6E6 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
 		E7B4587B208A16B800CCC6E6 /* HackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HackController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
