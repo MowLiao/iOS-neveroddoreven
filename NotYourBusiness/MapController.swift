@@ -10,10 +10,14 @@ import UIKit
 import GoogleMaps
 
 
-class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     
    
     @IBOutlet var mapView: GMSMapView!
+    
+    // VARIABLE SET BY MINIGAME (increments if success)
+    var currentFilter: Int = 1
+    
     
     var locationManager = CLLocationManager()
     var camera = GMSCameraPosition()
@@ -98,11 +102,22 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
+        let vc = segue.destination as! HackController
+        vc.filterToSet = self.currentFilter
+    }
+    
     //Reference the battle screen with its controller. NOTE - add a Storyboard ID - "BattleController" "
     func hackAction(sender: UIButton!) {
-        present( UIStoryboard(name: "BattleScreen", bundle: nil).instantiateViewController(withIdentifier: "BattleController") as UIViewController, animated: true, completion: nil)
-
+        
+        print("Starting Hack sequence")
+        performSegue(withIdentifier: "HackSegue", sender: nil)
     }
+    
+    // Function to get back from hacking screen
+    @IBAction func unwindFromHack(segue: UIStoryboardSegue)  { }
     
     func showButton(){
         hackButton.isHidden = false
