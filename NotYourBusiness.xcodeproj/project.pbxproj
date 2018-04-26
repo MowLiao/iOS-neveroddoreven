@@ -33,11 +33,11 @@
 		137741262052F1680072A3E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741252052F1680072A3E7 /* QuartzCore.framework */; };
 		137741282052F1730072A3E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741272052F1730072A3E7 /* SystemConfiguration.framework */; };
 		1377412A2052F1790072A3E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137741292052F1790072A3E7 /* UIKit.framework */; };
-		13A621692091F3A3002F0B5D /* endMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A621662091F3A3002F0B5D /* endMap.json */; };
-		13A6216A2091F3A3002F0B5D /* midMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A621672091F3A3002F0B5D /* midMap.json */; };
-		13A6216B2091F3A3002F0B5D /* startMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A621682091F3A3002F0B5D /* startMap.json */; };
 		13A6216F20923867002F0B5D /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6216E20923867002F0B5D /* FinishController.swift */; };
 		13AF878C2088EFD000E18211 /* dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 13AF878B2088EFD000E18211 /* dark.json */; };
+		13CE750120924C1000D8177B /* endMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE74FE20924C1000D8177B /* endMap.json */; };
+		13CE750220924C1000D8177B /* midMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE74FF20924C1000D8177B /* midMap.json */; };
+		13CE750320924C1000D8177B /* startMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE750020924C1000D8177B /* startMap.json */; };
 		DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AA60B208B70D70068BA02 /* TutorialController.swift */; };
 		DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */; };
 		DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */; };
@@ -98,11 +98,11 @@
 		137741252052F1680072A3E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		137741272052F1730072A3E7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		137741292052F1790072A3E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		13A621662091F3A3002F0B5D /* endMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = endMap.json; path = ../../../Downloads/endMap.json; sourceTree = "<group>"; };
-		13A621672091F3A3002F0B5D /* midMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = midMap.json; path = ../../../Downloads/midMap.json; sourceTree = "<group>"; };
-		13A621682091F3A3002F0B5D /* startMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = startMap.json; path = ../../../Downloads/startMap.json; sourceTree = "<group>"; };
 		13A6216E20923867002F0B5D /* FinishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 		13AF878B2088EFD000E18211 /* dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dark.json; sourceTree = "<group>"; };
+		13CE74FE20924C1000D8177B /* endMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = endMap.json; sourceTree = "<group>"; };
+		13CE74FF20924C1000D8177B /* midMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = midMap.json; sourceTree = "<group>"; };
+		13CE750020924C1000D8177B /* startMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = startMap.json; sourceTree = "<group>"; };
 		DF5AA60B208B70D70068BA02 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
 		DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
@@ -238,9 +238,9 @@
 		13AF878A2088EF7F00E18211 /* MapStyle */ = {
 			isa = PBXGroup;
 			children = (
-				13A621662091F3A3002F0B5D /* endMap.json */,
-				13A621672091F3A3002F0B5D /* midMap.json */,
-				13A621682091F3A3002F0B5D /* startMap.json */,
+				13CE74FE20924C1000D8177B /* endMap.json */,
+				13CE74FF20924C1000D8177B /* midMap.json */,
+				13CE750020924C1000D8177B /* startMap.json */,
 				13AF878B2088EFD000E18211 /* dark.json */,
 			);
 			name = MapStyle;
@@ -394,16 +394,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CE750120924C1000D8177B /* endMap.json in Resources */,
 				137740E12052E9C20072A3E7 /* LaunchScreen.storyboard in Resources */,
 				137740DE2052E9C20072A3E7 /* Assets.xcassets in Resources */,
+				13CE750320924C1000D8177B /* startMap.json in Resources */,
 				137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */,
-				13A6216B2091F3A3002F0B5D /* startMap.json in Resources */,
+				13CE750220924C1000D8177B /* midMap.json in Resources */,
 				13AF878C2088EFD000E18211 /* dark.json in Resources */,
-				13A6216A2091F3A3002F0B5D /* midMap.json in Resources */,
 				DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */,
 				DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */,
 				1377410B2052F0910072A3E7 /* GoogleMaps.bundle in Resources */,
-				13A621692091F3A3002F0B5D /* endMap.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
