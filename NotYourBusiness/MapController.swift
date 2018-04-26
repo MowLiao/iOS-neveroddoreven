@@ -100,7 +100,7 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
         hackButton.layer.cornerRadius = 10
         hackButton.clipsToBounds = true
         
-        let bgColor = UIColor(red: 59.0/255.0, green: 138.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        let bgColor = UIColor.green
 //        let textColor = UIColor(red: 100.0/255.0, green: 44.0/255.0, blue: 63.0/255.0, alpha: 1.0)
         
         hackButton.setTitleColor(UIColor.white, for: .normal)
