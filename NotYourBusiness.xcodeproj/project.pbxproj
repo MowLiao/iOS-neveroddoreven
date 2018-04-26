@@ -41,6 +41,7 @@
 		E7A7F5F9208B6BF0001233FD /* AnimatedBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */; };
 		E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4586C208A074200CCC6E6 /* PushButton.swift */; };
 		E7B4587C208A16B800CCC6E6 /* HackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4587B208A16B800CCC6E6 /* HackController.swift */; };
+		E7DF3D7E2091E973004D15DA /* HackBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF3D7D2091E973004D15DA /* HackBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedBarView.swift; sourceTree = "<group>"; };
 		E7B4586C208A074200CCC6E6 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
 		E7B4587B208A16B800CCC6E6 /* HackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HackController.swift; sourceTree = "<group>"; };
+		E7DF3D7D2091E973004D15DA /* HackBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 				E7B4586C208A074200CCC6E6 /* PushButton.swift */,
 				E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */,
 				E70CC824208E8C00004F4CDE /* IndicateLabel.swift */,
+				E7DF3D7D2091E973004D15DA /* HackBackground.swift */,
 			);
 			name = HackScreenComponents;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */,
 				E7A7F5F9208B6BF0001233FD /* AnimatedBarView.swift in Sources */,
 				DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */,
+				E7DF3D7E2091E973004D15DA /* HackBackground.swift in Sources */,
 				E70CC825208E8C00004F4CDE /* IndicateLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

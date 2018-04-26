@@ -18,7 +18,6 @@ import UIKit
  - pushButtonPressed(PushButton) -> Void
  - back(Any) -> Void
  */
-
 class HackController: UIViewController {
     
     // Linked interface variables
@@ -28,6 +27,7 @@ class HackController: UIViewController {
     @IBOutlet weak var indicate1: IndicateLabel!
     @IBOutlet weak var indicate2: IndicateLabel!
     @IBOutlet weak var indicate3: IndicateLabel!
+    @IBOutlet weak var thisBG: HackBackground!
     
     // Preset class variables
     var filterToSet: Int = 0
@@ -52,7 +52,6 @@ class HackController: UIViewController {
     }
     
     
-    
     /**
      Overrides viewDidLoad(): draws background bar and highlight region of animateBar. Also calls activateLevel()
      */
@@ -61,11 +60,12 @@ class HackController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        thisBG.startBackground()
         animateBar.drawBG()
         animateBar.drawHighlight()
         activateLevel(pointerSpeed: difficultyLevel)
-        
     }
+    
     
     /**
      Creates a set of components (timer, pointer, pointer direction) according to the current level and resets the class variables for a new level.
@@ -81,6 +81,8 @@ class HackController: UIViewController {
         let totalIncrements: Double = totalTime * 10    // Number of steps
         positionIncrement = 1.0/totalIncrements         // Increment fraction
         
+        animateBar.drawPointer()
+        
         tickTimer = Timer.scheduledTimer(               // Init timer
             timeInterval: totalTime/totalIncrements,
             target: self,
@@ -88,8 +90,9 @@ class HackController: UIViewController {
             userInfo: nil,
             repeats: true)
         
+        //animateBar.pointerLayer.opacity = 1.0
+        
         //animateBar.drawHighlight()//diffIn: CGFloat(pointerSpeed))
-        animateBar.drawPointer()
     }
     
     
@@ -99,11 +102,13 @@ class HackController: UIViewController {
     func clearLevel(clearAll: Bool)
     {
         print("clearing level")
+        //animateBar.pointerLayer.opacity = 0.0
         animateBar.pointerLayer.removeFromSuperlayer()
         tickTimer.invalidate()
         if clearAll
         {
             animateBar.highlightLayer.removeFromSuperlayer()
+            thisBG.stopBackground()
         }
     }
     
@@ -196,7 +201,7 @@ class HackController: UIViewController {
             {
                 // Trigger indicator button (in false mode)
                 self.setIndicate(indicator: self.difficultyLevel, successIn: false)
-                // Delay for 1 second to show result -> same level
+                // Delay for 1.5 seconds to show result -> same level
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5)
                 {
                     // Manually restart level
