@@ -16,8 +16,9 @@ import UIKit
  - flash() -> Void
  - done(String, Bool) -> Void
  - fail() -> Void
+ Class variables:
+ - letters: Array of characters
  */
-
 class IndicateLabel: UILabel {
     
     // Array of characters to jumble() through.
@@ -71,7 +72,7 @@ class IndicateLabel: UILabel {
     /**
      Animation function to make the button flash in transparency.
      */
-    func flash()
+    private func flash()
     {
         // Flashes 3 times, 250 ms each
         let flash = CABasicAnimation(keyPath: "opacity")
@@ -88,7 +89,7 @@ class IndicateLabel: UILabel {
     /**
      Sequence of events when the user fails the interaction: Button flashes red once before returning to old colour.
      */
-    func fail()
+    private func fail()
     {
         self.layer.borderColor = UIColor.red.cgColor
         self.layer.backgroundColor = UIColor.red.cgColor
@@ -102,7 +103,7 @@ class IndicateLabel: UILabel {
     }
     
     /**
-     Sequence of events when the user interacts: changes depending on whether user is successful or not. If user is successful, flashes and set background to be bright green. If user is not successful, flashes before calling fail().
+     Sequence of events when the user interacts: changes depending on whether user is successful or not. If user is successful, flashes and set background to be bright green. If user is not successful, flashes before calling fail(). Called by HackController.swift
      - argument inString: Final string to be displayed
      - argument success: Bool representation of whether user is successful
      */

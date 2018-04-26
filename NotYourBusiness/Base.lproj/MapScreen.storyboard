@@ -48,6 +48,11 @@
                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYV-fk-Y4Y" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-8z-ThD" customClass="HackBackground" customModule="NotYourBusiness" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-jE-mDY" customClass="AnimatedBarView" customModule="NotYourBusiness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
@@ -75,7 +80,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kod-xf-p4p" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
                                                 <rect key="frame" x="265" y="289" width="75" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <state key="normal" title="HACK">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -89,14 +94,15 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjF-5H-02L" customClass="PushButton" customModule="NotYourBusiness" customModuleProvider="target">
                                                 <rect key="frame" x="268" y="374" width="69" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.44680851063829785" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                 <state key="normal" title="CANCEL">
                                                     <color key="titleColor" red="0.63185127620000003" green="0.192139269" blue="0.17764019549999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="0.4695476113" green="0.1242076344" blue="0.096475744929999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                        <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHackButton" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
@@ -105,7 +111,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </view>
                                 </subviews>
@@ -135,13 +141,14 @@
                         <outlet property="indicate1" destination="ymk-uG-HO7" id="4ZC-om-4Q4"/>
                         <outlet property="indicate2" destination="lIh-p6-o1B" id="FVB-8r-ICC"/>
                         <outlet property="indicate3" destination="MNL-KB-dq7" id="79B-4W-5p1"/>
+                        <outlet property="thisBG" destination="Ya8-8z-ThD" id="YNc-89-fSH"/>
                         <segue destination="YxX-gp-Csh" kind="unwind" identifier="MapSegue" unwindAction="unwindFromHackWithSegue:" id="72Z-K6-aVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTL-TB-44B" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="YxX-gp-Csh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="36"/>
+            <point key="canvasLocation" x="1008.8" y="35.532233883058474"/>
         </scene>
         <!--Finish Controller-->
         <scene sceneID="QaU-Hg-6zY">
