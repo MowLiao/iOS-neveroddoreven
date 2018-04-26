@@ -132,10 +132,7 @@
                                 </connections>
                             </button>
                         </subviews>
-<<<<<<< HEAD
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-=======
-                        <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="a5H-Ry-T62" firstAttribute="centerX" secondItem="WuB-1W-vZp" secondAttribute="centerX" id="0QN-DU-Jl4"/>
                             <constraint firstItem="qmF-JR-0FB" firstAttribute="centerX" secondItem="WuB-1W-vZp" secondAttribute="centerX" id="29N-Sk-FHh"/>
@@ -211,7 +208,6 @@
                                 <include reference="pF9-ZE-FyB"/>
                             </mask>
                         </variation>
->>>>>>> storyboards
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOS-GM-iab" userLabel="First Responder" sceneMemberID="firstResponder"/>
