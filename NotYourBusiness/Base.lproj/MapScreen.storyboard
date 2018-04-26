@@ -26,6 +26,7 @@
                     <connections>
                         <outlet property="mapView" destination="8bC-Xf-vdC" id="zIc-zv-0w5"/>
                         <segue destination="GfH-Mg-pU4" kind="show" identifier="HackSegue" id="gtR-0i-8PL"/>
+                        <segue destination="m1m-VD-pTx" kind="show" identifier="FinishSegue" id="Cw9-ep-4DM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,6 +142,28 @@
                 <exit id="YxX-gp-Csh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1009" y="36"/>
+        </scene>
+        <!--Finish Controller-->
+        <scene sceneID="QaU-Hg-6zY">
+            <objects>
+                <viewController storyboardIdentifier="FinishSegue" id="m1m-VD-pTx" userLabel="Finish Controller" customClass="FinishController" customModule="NotYourBusiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="07j-ZZ-pTv"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNV-3K-CpF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ddy-I7-InS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="6vN-ZF-MjH" kind="unwind" identifier="FinishToMap" unwindAction="unwindFromFinishWithSegue:" id="lqe-5K-ptz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-gL-PZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6vN-ZF-MjH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="817"/>
         </scene>
     </scenes>
 </document>

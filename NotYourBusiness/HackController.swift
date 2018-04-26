@@ -228,7 +228,7 @@ class HackController: UIViewController {
     {
         // Set filter of map view
         let vc = segue.destination as! MapController
-        vc.currentFilter = self.filterToSet
+        vc.currentFilter = filterToSet
     }
     
     
