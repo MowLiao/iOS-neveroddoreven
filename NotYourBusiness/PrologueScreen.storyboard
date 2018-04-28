@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G19009" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pOi-rO-Kxl">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MenuScreen-->
+        <scene sceneID="d7N-dX-LAL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuScreen" id="gna-tv-jV5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkm-Q1-yb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="267"/>
+        </scene>
+        <!--Prologue Screen-->
+        <scene sceneID="ziD-JN-XEP">
+            <objects>
+                <viewController title="Tutorial Screen" id="pOi-rO-Kxl" userLabel="Prologue Screen" customClass="PrologueController" customModule="NotYourBusiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="orw-Zr-T43"/>
+                        <viewControllerLayoutGuide type="bottom" id="4dc-7R-P8z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JfU-un-BKn">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="ne5-WE-HwJ">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <color key="backgroundColor" red="0.84213432591623039" green="0.48227020915579188" blue="0.53783991800470421" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="0.93765729865771807" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Prologue" id="RfV-ZC-Z6K">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="FMX-9b-sNU">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="gna-tv-jV5" kind="show" id="7aS-1a-qYt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpA-aK-KG4" userLabel="StoryPt1">
+                                <rect key="frame" x="32" y="53" width="326" height="156"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="hl2-7c-OLj">
+                                        <variation key="widthClass=regular" constant="156"/>
+                                    </constraint>
+                                </constraints>
+                                <string key="text">In the year 2118, humanity decided to create a central A.I entity named E.O.S (Encompassing Operating System). Its sole purpose was to ensure mankind's survival. Within a year of operation, E.O.S determined that all humans have to be equipped with a BM (brain monitor) chip. Under constant surveillance, humans could no longer commit crimes against E.O.S laws.</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="hl2-7c-OLj"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVq-Ad-0ot" userLabel="StoryPt2">
+                                <rect key="frame" x="364" y="222" width="358" height="152"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="B8P-c6-rIB">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="81"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="139" id="Fjs-yO-wYh">
+                                        <variation key="widthClass=regular" constant="152"/>
+                                    </constraint>
+                                </constraints>
+                                <string key="text">Half a century later, E.O.S concludes that the concept of colour produces superfluous emotions in humans; emotions contradicting E.O.S laws.  Monochromacy V1 was broadcast to all active BMs. A software patch that translates all incoming colour wavelengths into a corresponding greyscale colour. Humans have no choice but to view the world in black and white. </string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="B8P-c6-rIB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="B8P-c6-rIB"/>
+                                        <exclude reference="Fjs-yO-wYh"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-Na-Djg" userLabel="StoryPt3">
+                                <rect key="frame" x="46" y="397" width="299" height="131"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="qWx-Nn-bDJ">
+                                        <variation key="widthClass=regular" constant="131"/>
+                                    </constraint>
+                                </constraints>
+                                <string key="text">The Vagabonds, a group of hackers who seek to terminate E.O.S's reign, travel the world in an effort to remain hidden whilst they plot their counterattacks. They have identified the specific broadcasting center responsible for transmitting Monochromacy. </string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="qWx-Nn-bDJ"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM0-T0-chz" userLabel="Mission">
+                                <rect key="frame" x="32" y="529" width="690" height="85"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="pAT-Ab-BzA"/>
+                                </constraints>
+                                <string key="text">Your mission is to infiltrate this center and install a patch that disables Monochromacy.
+ 
+Good luck!</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pAT-Ab-BzA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pAT-Ab-BzA"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bM0-T0-chz" firstAttribute="bottom" secondItem="4dc-7R-P8z" secondAttribute="top" id="0bd-Zf-Up5"/>
+                            <constraint firstItem="bM0-T0-chz" firstAttribute="top" secondItem="JfU-un-BKn" secondAttribute="top" constant="529" id="23l-rf-HFT">
+                                <variation key="heightClass=compact-widthClass=compact" constant="272"/>
+                            </constraint>
+                            <constraint firstItem="FVq-Ad-0ot" firstAttribute="top" secondItem="XpA-aK-KG4" secondAttribute="bottom" constant="24" id="2Mk-kX-EXB">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-4"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="leading" secondItem="mPA-Na-Djg" secondAttribute="leading" id="DXF-Vc-tX4">
+                                <variation key="widthClass=regular" constant="-14"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="leading" secondItem="JfU-un-BKn" secondAttribute="leading" id="Oxr-VU-rD0">
+                                <variation key="widthClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstItem="4dc-7R-P8z" firstAttribute="top" secondItem="mPA-Na-Djg" secondAttribute="bottom" constant="100" id="Qip-xe-4cp"/>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="trailing" secondItem="FVq-Ad-0ot" secondAttribute="trailing" id="SDm-14-o9F">
+                                <variation key="widthClass=regular" constant="-364"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="-7"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="trailing" secondItem="mPA-Na-Djg" secondAttribute="trailing" id="TXk-Mq-0u3">
+                                <variation key="widthClass=regular" constant="13"/>
+                            </constraint>
+                            <constraint firstItem="FVq-Ad-0ot" firstAttribute="top" secondItem="XpA-aK-KG4" secondAttribute="bottom" constant="24" id="U4x-6a-Ui8">
+                                <variation key="widthClass=regular" constant="13"/>
+                            </constraint>
+                            <constraint firstItem="mPA-Na-Djg" firstAttribute="top" secondItem="FVq-Ad-0ot" secondAttribute="bottom" constant="29" id="ZDY-p5-b5x">
+                                <variation key="widthClass=regular" constant="23"/>
+                            </constraint>
+                            <constraint firstItem="4dc-7R-P8z" firstAttribute="top" secondItem="bM0-T0-chz" secondAttribute="bottom" constant="35" id="b1Q-LM-Fun">
+                                <variation key="widthClass=regular" constant="410"/>
+                            </constraint>
+                            <constraint firstItem="ne5-WE-HwJ" firstAttribute="top" secondItem="JfU-un-BKn" secondAttribute="top" id="bYe-o2-d5w"/>
+                            <constraint firstItem="mPA-Na-Djg" firstAttribute="top" secondItem="4dc-7R-P8z" secondAttribute="bottom" constant="2" id="cqw-bD-z4m"/>
+                            <constraint firstItem="4dc-7R-P8z" firstAttribute="top" secondItem="FVq-Ad-0ot" secondAttribute="bottom" constant="27" id="cxD-fL-Kwc">
+                                <variation key="heightClass=compact-widthClass=compact" constant="169"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="leading" secondItem="bM0-T0-chz" secondAttribute="leading" id="fOp-pL-qFF">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-146"/>
+                            </constraint>
+                            <constraint firstItem="bM0-T0-chz" firstAttribute="top" secondItem="mPA-Na-Djg" secondAttribute="bottom" constant="45" id="gdf-1N-bVm">
+                                <variation key="widthClass=regular" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="top" secondItem="ne5-WE-HwJ" secondAttribute="bottom" id="joD-JA-H7C">
+                                <variation key="widthClass=regular" constant="9"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="trailing" secondItem="ne5-WE-HwJ" secondAttribute="trailing" id="lFG-l9-gCN">
+                                <variation key="widthClass=regular" constant="-410"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="mPA-Na-Djg" firstAttribute="top" secondItem="FVq-Ad-0ot" secondAttribute="bottom" constant="3" id="lu8-t6-4OL">
+                                <variation key="heightClass=compact-widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="leading" secondItem="ne5-WE-HwJ" secondAttribute="leading" id="plp-Ra-wTZ">
+                                <variation key="widthClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="XpA-aK-KG4" secondAttribute="trailing" id="rDa-aa-3vz">
+                                <variation key="widthClass=regular" constant="410"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="leading" secondItem="FVq-Ad-0ot" secondAttribute="leading" id="t2E-C5-TXt">
+                                <variation key="widthClass=regular" constant="-332"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="trailing" secondItem="bM0-T0-chz" secondAttribute="trailing" id="vYc-LD-KjD">
+                                <variation key="widthClass=regular" constant="-364"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="146"/>
+                            </constraint>
+                            <constraint firstItem="bM0-T0-chz" firstAttribute="top" secondItem="mPA-Na-Djg" secondAttribute="bottom" constant="45" id="w5o-gV-1AU">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-36"/>
+                            </constraint>
+                            <constraint firstItem="XpA-aK-KG4" firstAttribute="top" secondItem="JfU-un-BKn" secondAttribute="top" constant="44" id="yZR-tz-1Fi">
+                                <variation key="widthClass=regular" constant="53"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bYe-o2-d5w"/>
+                                <exclude reference="2Mk-kX-EXB"/>
+                                <exclude reference="cqw-bD-z4m"/>
+                                <exclude reference="lu8-t6-4OL"/>
+                                <exclude reference="0bd-Zf-Up5"/>
+                                <exclude reference="23l-rf-HFT"/>
+                                <exclude reference="w5o-gV-1AU"/>
+                                <exclude reference="Qip-xe-4cp"/>
+                                <exclude reference="cxD-fL-Kwc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="bYe-o2-d5w"/>
+                                <exclude reference="yZR-tz-1Fi"/>
+                                <include reference="2Mk-kX-EXB"/>
+                                <exclude reference="U4x-6a-Ui8"/>
+                                <exclude reference="ZDY-p5-b5x"/>
+                                <exclude reference="cqw-bD-z4m"/>
+                                <include reference="lu8-t6-4OL"/>
+                                <include reference="0bd-Zf-Up5"/>
+                                <exclude reference="23l-rf-HFT"/>
+                                <exclude reference="gdf-1N-bVm"/>
+                                <exclude reference="w5o-gV-1AU"/>
+                                <include reference="Qip-xe-4cp"/>
+                                <exclude reference="b1Q-LM-Fun"/>
+                                <include reference="cxD-fL-Kwc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="StoryPt2TextView" destination="FVq-Ad-0ot" id="q86-J7-ha3"/>
+                        <outlet property="StoryPt3TextView" destination="mPA-Na-Djg" id="ySj-su-dTN"/>
+                        <outlet property="missionTextView" destination="bM0-T0-chz" id="eqt-Jl-5tc"/>
+                        <outlet property="storyPt1TextView" destination="XpA-aK-KG4" id="qYA-KI-3q8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rF-3B-fqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.49325337331345" y="-242.40000000000001"/>
+        </scene>
+    </scenes>
+</document>

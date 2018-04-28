@@ -22,12 +22,13 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
         }
     }
     
-    static var level = Int()
-    static var circleToDraw = ["\(level)","location1","location2"]
     var currentCircle = GMSCircle()
     var circleID = ""
+
     var firstLoad = true
-    
+    static var level = Int()
+    static var circleToDraw = ["\(level)","location1","location2"]
+
     var previousFilter = Int()
     var locationManager = CLLocationManager()
     var camera = GMSCameraPosition()
@@ -103,7 +104,7 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
         let bgColor = UIColor.green
 //        let textColor = UIColor(red: 100.0/255.0, green: 44.0/255.0, blue: 63.0/255.0, alpha: 1.0)
         
-        hackButton.setTitleColor(UIColor.white, for: .normal)
+        hackButton.setTitleColor(UIColor.black, for: .normal)
         hackButton.backgroundColor = bgColor
         
         
@@ -297,10 +298,11 @@ class MapController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelega
     }
     
     func removePointOfInterest(circle: GMSCircle, ID: String) {
-        let indexOfArr = MapController.circleToDraw.index(of: ID)
-//        print("INDEX IS -------- \(indexOfArr)")
         
-        MapController.circleToDraw.remove(at: indexOfArr!)
+        if let indexOfArr = MapController.circleToDraw.index(of: ID){
+            MapController.circleToDraw.remove(at: indexOfArr)
+        }
+//        print("INDEX IS -------- \(indexOfArr)")
         
         circle.radius = 0
         circle.strokeWidth = 0

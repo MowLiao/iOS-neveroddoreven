@@ -38,9 +38,10 @@
 		13CE750120924C1000D8177B /* endMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE74FE20924C1000D8177B /* endMap.json */; };
 		13CE750220924C1000D8177B /* midMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE74FF20924C1000D8177B /* midMap.json */; };
 		13CE750320924C1000D8177B /* startMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 13CE750020924C1000D8177B /* startMap.json */; };
-		DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AA60B208B70D70068BA02 /* TutorialController.swift */; };
+		DF5AA60C208B70D70068BA02 /* PrologueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5AA60B208B70D70068BA02 /* PrologueController.swift */; };
 		DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */; };
-		DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */; };
+		DFDE753920949CFA00F73172 /* MenuScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE753820949CFA00F73172 /* MenuScreenController.swift */; };
+		DFEDC529208A41DC00523541 /* PrologueScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEDC528208A41DC00523541 /* PrologueScreen.storyboard */; };
 		E70CC825208E8C00004F4CDE /* IndicateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70CC824208E8C00004F4CDE /* IndicateLabel.swift */; };
 		E7A7F5F9208B6BF0001233FD /* AnimatedBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */; };
 		E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4586C208A074200CCC6E6 /* PushButton.swift */; };
@@ -103,9 +104,10 @@
 		13CE74FE20924C1000D8177B /* endMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = endMap.json; sourceTree = "<group>"; };
 		13CE74FF20924C1000D8177B /* midMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = midMap.json; sourceTree = "<group>"; };
 		13CE750020924C1000D8177B /* startMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = startMap.json; sourceTree = "<group>"; };
-		DF5AA60B208B70D70068BA02 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		DF5AA60B208B70D70068BA02 /* PrologueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrologueController.swift; sourceTree = "<group>"; };
 		DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
-		DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
+		DFDE753820949CFA00F73172 /* MenuScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreenController.swift; sourceTree = "<group>"; };
+		DFEDC528208A41DC00523541 /* PrologueScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrologueScreen.storyboard; sourceTree = "<group>"; };
 		E70CC824208E8C00004F4CDE /* IndicateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicateLabel.swift; sourceTree = "<group>"; };
 		E7A7F5F8208B6BF0001233FD /* AnimatedBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedBarView.swift; sourceTree = "<group>"; };
 		E7B4586C208A074200CCC6E6 /* PushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
@@ -259,8 +261,9 @@
 			children = (
 				E7B4587B208A16B800CCC6E6 /* HackController.swift */,
 				137740D82052E9C20072A3E7 /* MapController.swift */,
-				DF5AA60B208B70D70068BA02 /* TutorialController.swift */,
+				DF5AA60B208B70D70068BA02 /* PrologueController.swift */,
 				13A6216E20923867002F0B5D /* FinishController.swift */,
+				DFDE753820949CFA00F73172 /* MenuScreenController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,7 +274,7 @@
 				137740DF2052E9C20072A3E7 /* LaunchScreen.storyboard */,
 				137740DA2052E9C20072A3E7 /* MapScreen.storyboard */,
 				DFCD6B27208A1EF500342345 /* MenuScreen.storyboard */,
-				DFEDC528208A41DC00523541 /* TutorialScreen.storyboard */,
+				DFEDC528208A41DC00523541 /* PrologueScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -401,7 +404,7 @@
 				137740DC2052E9C20072A3E7 /* MapScreen.storyboard in Resources */,
 				13CE750220924C1000D8177B /* midMap.json in Resources */,
 				13AF878C2088EFD000E18211 /* dark.json in Resources */,
-				DFEDC529208A41DC00523541 /* TutorialScreen.storyboard in Resources */,
+				DFEDC529208A41DC00523541 /* PrologueScreen.storyboard in Resources */,
 				DFCD6B28208A1EF500342345 /* MenuScreen.storyboard in Resources */,
 				1377410B2052F0910072A3E7 /* GoogleMaps.bundle in Resources */,
 			);
@@ -433,9 +436,10 @@
 				E7B4587C208A16B800CCC6E6 /* HackController.swift in Sources */,
 				E7B4586D208A074200CCC6E6 /* PushButton.swift in Sources */,
 				E7A7F5F9208B6BF0001233FD /* AnimatedBarView.swift in Sources */,
-				DF5AA60C208B70D70068BA02 /* TutorialController.swift in Sources */,
+				DF5AA60C208B70D70068BA02 /* PrologueController.swift in Sources */,
 				13A6216F20923867002F0B5D /* FinishController.swift in Sources */,
 				E7DF3D7E2091E973004D15DA /* HackBackground.swift in Sources */,
+				DFDE753920949CFA00F73172 /* MenuScreenController.swift in Sources */,
 				E70CC825208E8C00004F4CDE /* IndicateLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

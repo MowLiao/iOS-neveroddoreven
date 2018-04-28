@@ -1,5 +1,5 @@
 //
-//  TutorialController.swift
+//  PrologueController.swift
 //  NotYourBusiness
 //
 //  Created by Panagiotis Penloglou [sc14pp] on 21/04/2018.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TutorialController: UIViewController {
+class PrologueController: UIViewController {
 
+    
     @IBOutlet weak var storyPt1TextView: UITextView!
     @IBOutlet weak var storyPt2TextView: UITextView!
     @IBOutlet weak var storyPt3TextView: UITextView!

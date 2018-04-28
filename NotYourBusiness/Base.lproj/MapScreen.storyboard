@@ -161,16 +161,76 @@
                     <view key="view" contentMode="scaleToFill" id="ddy-I7-InS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vt-4z-l6W" userLabel="Restart">
+                                <rect key="frame" x="70.5" y="425" width="234" height="28"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.51372549019607838" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Lx0-ft-drf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartAction:" destination="m1m-VD-pTx" eventType="touchUpInside" id="GKu-8T-o02"/>
+                                    <segue destination="ByI-5D-ErO" kind="show" id="LhN-Az-s3Y"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransBrain" translatesAutoresizingMaskIntoConstraints="NO" id="uwH-rp-z1P" userLabel="TransBrain">
+                                <rect key="frame" x="70.5" y="103" width="234" height="266"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransBrainEnd" translatesAutoresizingMaskIntoConstraints="NO" id="5dd-SQ-Zxf" userLabel="TransBrainEnd">
+                                <rect key="frame" x="70.5" y="103" width="234" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="p4g-ni-vLq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Vt-4z-l6W" firstAttribute="top" secondItem="uwH-rp-z1P" secondAttribute="bottom" constant="22" id="65Y-uP-Q2g">
+                                <variation key="heightClass=regular-widthClass=compact" constant="56"/>
+                            </constraint>
+                            <constraint firstItem="uwH-rp-z1P" firstAttribute="leading" secondItem="5dd-SQ-Zxf" secondAttribute="leading" id="7XH-SI-MIa"/>
+                            <constraint firstItem="oNV-3K-CpF" firstAttribute="top" secondItem="4Vt-4z-l6W" secondAttribute="bottom" constant="31" id="9C7-CL-JVi">
+                                <variation key="heightClass=regular-widthClass=compact" constant="214"/>
+                            </constraint>
+                            <constraint firstItem="5dd-SQ-Zxf" firstAttribute="top" secondItem="07j-ZZ-pTv" secondAttribute="bottom" id="MQp-Pl-oZG">
+                                <variation key="heightClass=regular-widthClass=compact" constant="83"/>
+                            </constraint>
+                            <constraint firstItem="uwH-rp-z1P" firstAttribute="leading" secondItem="4Vt-4z-l6W" secondAttribute="leading" id="Nq8-L8-gt3"/>
+                            <constraint firstItem="5dd-SQ-Zxf" firstAttribute="trailing" secondItem="uwH-rp-z1P" secondAttribute="trailing" id="b4j-ug-DKu"/>
+                            <constraint firstItem="5dd-SQ-Zxf" firstAttribute="top" secondItem="uwH-rp-z1P" secondAttribute="top" id="b7z-2a-k6O"/>
+                            <constraint firstItem="uwH-rp-z1P" firstAttribute="centerX" secondItem="ddy-I7-InS" secondAttribute="centerX" id="muu-17-KBb"/>
+                            <constraint firstItem="uwH-rp-z1P" firstAttribute="bottom" secondItem="5dd-SQ-Zxf" secondAttribute="bottom" id="rsX-Iu-U16"/>
+                            <constraint firstItem="uwH-rp-z1P" firstAttribute="trailing" secondItem="4Vt-4z-l6W" secondAttribute="trailing" id="vlq-r8-zQy"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="TransBrainEnd" destination="5dd-SQ-Zxf" id="tG9-7a-n7S"/>
+                        <outlet property="backgroundView" destination="ddy-I7-InS" id="OlW-zN-ph7"/>
+                        <outlet property="restartButton" destination="4Vt-4z-l6W" id="HnH-OG-FV0"/>
+                        <outlet property="transBrain" destination="uwH-rp-z1P" id="OMS-uP-BdO"/>
                         <segue destination="6vN-ZF-MjH" kind="unwind" identifier="FinishToMap" unwindAction="unwindFromFinishWithSegue:" id="lqe-5K-ptz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-gL-PZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6vN-ZF-MjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="92" y="817"/>
+            <point key="canvasLocation" x="80.799999999999997" y="805.54722638680664"/>
+        </scene>
+        <!--MenuScreen-->
+        <scene sceneID="fjx-Fu-MuZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuScreen" id="ByI-5D-ErO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg1-KT-z0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="818"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TransBrain" width="400" height="404"/>
+        <image name="TransBrainEnd" width="400" height="404"/>
+    </resources>
 </document>
