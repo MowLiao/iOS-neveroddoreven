@@ -13,6 +13,8 @@ This app uses:
 * Google Maps API
 * Core Graphics and Core Animations using UIBezierPaths (included in standard libraries)
   
-This app is also optimised for iPhone 7, though should be compatible with other screen resolutions.
+This app is also optimised for iPhone 7, though should be compatible with other screen resolutions.  
+  
+**Important!** This app needs to be run in debug mode, where the "City Run" mode is selected to spoof the location. We have placed "points of interest" along the city run route that demonstrate the functionality of the app. When demonstrating on a real device, these points of interest need to be changed programmatically to reflect the real location.
 
 © 2018 Melissa Liau, Martin Tsenov and Panagiotis Penloglou
