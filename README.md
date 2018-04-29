@@ -1,7 +1,7 @@
 ```
  __   _________    ________ ______ _____ ______ ______  _____  ______________    __________   _
 | \  ||______ \  / |______|_____/|     ||     \|     \|     ||_____/|______ \  / |______| \  |
-|  \_||______  \/  |______|    \_|_____||_____/|_____/|_____||    \_|______  \/  |______|  \_|                                      
+|  \_||______  \/  |______|    \_|_____||_____/|_____/|_____||    \_|______  \/  |______|  \_|  
 ```
 "Never odd or even" is a location-based game that promotes real world exploration.  
 Initially, the world is devoid of colour. Within the setting of the game, the player's mission is to visit fictional "broadcasting centres" in real world locations.  
